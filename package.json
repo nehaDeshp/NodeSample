@@ -1,0 +1,31 @@
+{
+  "name": "empapp",
+  "version": "1.0.0",
+  "description": "Employee Application for creating a Node JS Demo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nehaDeshp/NodeSample.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "Express",
+    "Rest"
+  ],
+  "author": "Neha Deshpande",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nehaDeshp/NodeSample/issues"
+  },
+  "homepage": "https://github.com/nehaDeshp/NodeSample#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.7",
+    "nodemon": "^1.17.1"
+  }
+}

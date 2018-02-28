@@ -1,0 +1,33 @@
+<div ng-init="getEmployees()" class="container">     
+    <input type="text" ng-model="searchText" placeholder="Search ">
+    <button ng-click="getEmployeesByName()">Search</button>
+    <br><br>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Contact</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Salary</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in fetchData">
+                    <!-- <a ng-click="invoke(users)" href="#/view/update/{{ users.name }}"></a> -->
+                <td><a ng-click="update(user)" href= "#/view/update/{{ user.name }}" >{{ user.name }}</td></a>
+                <td>{{ user.dept}}</td>
+                <td>{{ user.contact}}</td>
+                <td>{{ user.area}}</td>
+                <td>{{ user.status}}</td>
+                <td>{{ user.salary}}</td>
+                <td><button ng-click="delete(user)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn-primary" ng-click="window.history.back()">Back</button>
+</div>
+
+ng-href="#/view/update/{{ users.name }}"

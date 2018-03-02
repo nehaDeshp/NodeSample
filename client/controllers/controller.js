@@ -1,4 +1,4 @@
-app.controller('viewController', function ($scope, $http) {
+app.controller('viewController', function ($scope, $http, $routeParams) {
     $scope.getEmployees = function () {
         $http.get("http://127.0.0.1:3000/view/").then(
             function (response) {
@@ -42,6 +42,7 @@ app.controller('viewController', function ($scope, $http) {
     }
     $scope.delete = function(user){
         var url = "http://127.0.0.1:3000/delete/"+user.name;
+
         $http.delete(url,user)
         .then(function(response){
             console.log("deleted");
@@ -58,10 +59,23 @@ app.controller('viewController', function ($scope, $http) {
         alert($scope);
     }
     $scope.startUpdate = function(){
-        console.log("In start Update",$scope.url)
-        console.log($scope)
-        console.log("data:",$scope.user)
-        $http.put($scope.url,$scope.name)
+        // console.log("In start Update",$scope.url)
+        // $scope.sal="";
+        // $scope.dname="";
+        // $scope.addr="";
+        // $scope.cntct="";
+        // $scope.status="";
+
+        console.log($routeParams)
+        var parameters = {
+            "salary": $scope.sal,
+            "dept": $scope.dname,
+            "area": $scope.addr,
+            "contact": $scope.cntct,
+            "status": $scope.status
+        };
+        console.log("data:",parameters)
+        $http.put("http://127.0.0.1:3000/view/update/"+$routeParams.name,parameters)
         .then(function(response){
             console.log("updated");
         },

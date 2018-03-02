@@ -63,7 +63,8 @@ app.delete('/delete/:name',function(req,res){
 		res.json(employee);
 	});
 });
-app.put('view/update/:name',function(req,res){
+app.put('/view/update/:name',function(req,res){
+    console.log("entered put!",req)
     var update_Params ={
         "dept":req.body.dept,
         "area":req.body.area,
@@ -71,6 +72,8 @@ app.put('view/update/:name',function(req,res){
         "status":req.body.status,
         "salary":req.body.salary
     };
+    console.log("Server : ",update_Params);
+    console.log(req.params.name)
     Employee.findOneAndUpdate({name:req.params.name}, update_Params, function(err, employee){
 		if(err)
 			res.send(err);

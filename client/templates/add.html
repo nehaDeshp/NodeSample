@@ -1,38 +1,16 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <form name = "add_new" method="POST">
-                <div class="form-group">
-                    <input type="text" name="empName" placeholder="Employee Full Name" ng-model="ename" required/>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="dept" placeholder="Department Name" ng-model="dname" required/>
-                </div>
-                <div class="form-group">  
-                    <input type="text" name="contact" placeholder="Contact No." ng-model="cntct" required/>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="address" placeholder="Address" ng-model="addr" required/>  
-                </div>
-                <div class="form-group">
-                    <input type="text" name="status" placeholder="Employment Status" ng-model="status" required/>   
-                </div>
-                <div class="form-group">
-                    <input type="tel" name="salary" placeholder="Salary" ng-model="sal" required/>   
-                </div>
-                <div class="row form-group">
-                    <div class="col-md-2">
-                        <div ng-if="add_new.$valid == true">
-                            <button ng-click="addUser()">Save</button>
-                        </div><br>
-                    </div>
-                    <div class="col-md-2">
-                        <button ng-click="reset()">Reset</button>
-                    </div>
-                </div>
-            </form>
+    <form name = "add_new" method="POST" class="form-inline">
+        <div class="form-group">
+            <input type="text" class="form-control input-lg" name="empName" placeholder="Employee Full Name" ng-model="ename" required/>
+            <input type="text" name="dept" placeholder="Department Name" ng-model="dname" required/>
+            <input type="text" name="contact" placeholder="Contact No." ng-model="cntct" required/>
+            <input type="text" name="address" placeholder="Address" ng-model="addr" required/>  
+            <input type="text" name="status" placeholder="Employment Status" ng-model="status" required/>   
+            <input type="tel" name="salary" placeholder="Salary" ng-model="sal" required/>   
+            <div ng-if="add_new.$valid == true">
+                <button ng-click="addUser()">Save</button>
+            </div><br>
+            <button ng-click="reset()">Reset</button>
         </div>
-        <div class="col-md-4"></div>
-    </div>
+    </form>
 </div>
